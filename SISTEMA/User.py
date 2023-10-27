@@ -11,8 +11,14 @@ class User:
         self.weight = weight
         self.height = height
 
-    def get_full_name(self):
+    def getFullName(self):
         return f"{self.first_name} {self.last_name}"
+
+    def getFirstName(self):
+        return self.first_name
+
+    def getLastName(self):
+        return self.last_name
 
     def get_user_id(self):
         return self.user_id

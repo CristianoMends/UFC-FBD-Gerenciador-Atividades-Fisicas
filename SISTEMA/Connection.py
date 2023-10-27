@@ -10,7 +10,7 @@ class Connection():
         self.port = "5432"
         self.conn = None
 
-    def getCursor(self):
+    def getConnection(self):
         try:
             self.conn = psycopg2.connect(
                 dbname=self.dbname,
@@ -21,6 +21,6 @@ class Connection():
                 options="-c statement_timeout=10000",
                 connect_timeout=10
             )
+            return self.conn
         except (Exception, psycopg2.DatabaseError, OperationalError) as error:
             print(error)
-        return self.conn.cursor()
