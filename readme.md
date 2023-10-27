@@ -2,21 +2,20 @@
 
 ![Logo do Projeto](url-da-imagem)
 
-O Gerenciador de Atividades Físicas é uma aplicação
-que permite aos usuários registrar e acompanhar suas atividades físicas diárias, como corridas, caminhadas, ciclismo e muito mais.
+O Gym Manager é uma aplicação que permite aos usuários registrar e acompanhar seus exercicios físicas diários.
 
 ## Índice
 
-- [Modelagem](#instalação)
+- [Modelagem do BD](#instalação)
 - [Licença](#licença)
 
 <h2>Diagrama entidade relacionamento</h2>
 
-![](https://github.com/CristianoMends/UFC-FBD-Gerenciador-Atividades-Fisicas/blob/main/Diagrama%20-%20Modelagem%20ER-EER.PNG)
+![](https://github.com/CristianoMends/UFC-FBD-Gym-Manager/blob/main/DOCS/GymManagerDB%20Entidade%20Relacionamento.drawio%20(1).png)
 
-<h2>Mapeamento de DER para relacional</h2>
+<h2>Mapeamento ER para relacional</h2>
 
-![](https://github.com/CristianoMends/UFC-FBD-Gerenciador-Atividades-Fisicas/blob/main/Diagrama%20-%20Modelagem%20ER-EER.PNG)
+![](https://github.com/CristianoMends/UFC-FBD-Gym-Manager/blob/main/DOCS/GymManagerDB%20Relacional.drawio.png)
 
 Licença
 Este projeto está sob a Licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
