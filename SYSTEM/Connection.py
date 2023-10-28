@@ -1,7 +1,8 @@
 import psycopg2
 from psycopg2 import OperationalError
 
-class Connection():
+
+class Connection:
     def __init__(self):
         self.user = "postgres"
         self.dbname = "gym_manager_db"
