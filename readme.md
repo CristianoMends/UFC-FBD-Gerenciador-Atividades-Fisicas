@@ -11,7 +11,7 @@ O Gym Manager é uma aplicação que permite aos usuários registrar e acompanha
 
 <h2>Diagrama entidade relacionamento</h2>
 
-![](/DOCS/GymManagerDB Entidade Relacionamento.drawio (1).png)
+![Modelo ER](DOCS/GymManagerDB Entidade Relacionamento.drawio (1).png)
 
 <h2>Mapeamento ER para relacional</h2>
 
