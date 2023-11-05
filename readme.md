@@ -11,11 +11,11 @@ O Gym Manager é uma aplicação que permite aos usuários registrar e acompanha
 
 <h2>Diagrama entidade relacionamento</h2>
 
-![Modelo ER](DOCS/GymManagerDB Entidade Relacionamento.drawio (1).png)
+![Modelo ER](/DOCS/ER.png)
 
 <h2>Mapeamento ER para relacional</h2>
 
-![](/DOCS/GymManagerDB Relacional.drawio.png)
+![](/DOCS/Relacional.png)
 
 Licença
 Este projeto está sob a Licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
