@@ -1,5 +1,11 @@
-from SYSTEM.controller.AppController import APP
+from view.login import Login
+import tkinter as tk
 
 
-app = APP()
-app.showLoginView()
+
+login = Login()
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = Login(root)
+    root.mainloop()
