@@ -167,3 +167,7 @@ class Consulta:
             # Tratar erros de banco de dados
             print(f"Erro no banco de dados: {e}")
             return None
+
+    def getMaiorPesoUsuario(self):
+        pass
+

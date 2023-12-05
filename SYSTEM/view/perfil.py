@@ -3,7 +3,7 @@ import tkinter.font as tkFont
 
 class Perfil:
     def __init__(self):
-
+        self.usuarioAtual = None
         root = tk.Tk()
         self.root = root
         self.root.title("Perfil")
@@ -74,19 +74,15 @@ class Perfil:
         GLabel_229["text"] = "Equipamento mais utilizado:"
         GLabel_229.place(x=20,y=330,width=185,height=25)
 
-        self.textUsuario=tk.Entry(self.root)
-        self.textUsuario["bg"] = "#ffffff"
-        self.textUsuario["borderwidth"] = "1px"
+        self.textUsuario=tk.Label(self.root)
         ft = tkFont.Font(family='Times',size=10)
         self.textUsuario["font"] = ft
         self.textUsuario["fg"] = "#333333"
         self.textUsuario["justify"] = "left"
-        self.textUsuario["text"] = ""
+        self.textUsuario["text"] = f"{""}"
         self.textUsuario.place(x=80,y=60,width=170,height=25)
 
-        self.textPeso=tk.Entry(self.root)
-        self.textPeso["bg"] = "#ffffff"
-        self.textPeso["borderwidth"] = "1px"
+        self.textPeso=tk.Label(self.root)
         ft = tkFont.Font(family='Times',size=10)
         self.textPeso["font"] = ft
         self.textPeso["fg"] = "#333333"
@@ -169,6 +165,12 @@ class Perfil:
     def voltar(self):
         print("command")
 
-    def show(self):
+    def show(self, usuarioAtual):
+        self.usuarioAtual = usuarioAtual
+        self.textUsuario["text"] = f"{self.usuarioAtual.nome}"
+        self.textPeso["text"] = f"{self.usuarioAtual.peso}"
+        self.textMaiorPeso["text"] = f"{self.cunsulta.getMaiorPesoUsuario()}"
+
+
         self.root.deiconify()  # Torna a janela visível
         self.root.mainloop()

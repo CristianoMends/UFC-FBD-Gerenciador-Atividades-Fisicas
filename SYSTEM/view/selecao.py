@@ -89,7 +89,7 @@ class Selecao:
 
     def showPerfil(self):
         self.root.withdraw()
-        self.perfil.show()
+        self.perfil.show(self.usuarioAtual)
 
 
     def showComunidade(self):
