@@ -39,8 +39,10 @@ class Consulta:
             cursor = conn.cursor()
 
             cursor.execute('''
-                SELECT * FROM usuarios
-                WHERE usuario = %s AND senha = %s
+                SELECT * FROM usuario
+                inner join login
+                on login.usuario_id = usuario.usuario_id
+                WHERE login.usuario = %s AND login.senha = %s
             ''', (usuario, senha))
 
             result = cursor.fetchone()

@@ -1,13 +1,19 @@
 import tkinter as tk
 import tkinter.font as tkFont
-from dao.consulta import Consulta
 from tkinter import messagebox
-from view.Login import Login
+
+from dao.consulta import Consulta
 
 
 class Cadastro:
-    def __init__(self, root):
+    def __init__(self, login):
+        self.login = login
+
+        root = tk.Tk()
         self.root = root
+        self.root.title("Cadastro")
+        self.root.withdraw()
+
         self.textPeso = None
         self.textSobrenome = None
         self.textSenha = None
@@ -16,14 +22,13 @@ class Cadastro:
         self.textAltura = None
         self.consulta = Consulta()
 
-        root.title("undefined")
         width=500
         height=500
         screenwidth = root.winfo_screenwidth()
         screenheight = root.winfo_screenheight()
         alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
-        root.geometry(alignstr)
-        root.resizable(width=False, height=False)
+        self.root.geometry(alignstr)
+        self.root.resizable(width=False, height=False)
 
         GLabel_907=tk.Label(root)
         ft = tkFont.Font(family='Times',size=14)
@@ -208,11 +213,11 @@ class Cadastro:
     def voltarLogin(self):
         resposta = messagebox.askokcancel("Confirmação", "Deseja voltar para Login?")
         if resposta:
-            ##colocar para abrir a tela de login
-            self.root.destroy()
+            self.root.withdraw()
+            self.login.show()
+
+    def show(self):
+        self.root.deiconify()  # Torna a janela visível
+        self.root.mainloop()
 
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = Cadastro(root)
-    root.mainloop()
