@@ -1,11 +1,22 @@
 import tkinter as tk
 import tkinter.font as tkFont
+from dao.consulta import Consulta
+from tkinter import messagebox
+from view.Login import Login
+
 
 class Cadastro:
     def __init__(self, root):
-        #setting title
+        self.root = root
+        self.textPeso = None
+        self.textSobrenome = None
+        self.textSenha = None
+        self.textUsuario = None
+        self.textNome = None
+        self.textAltura = None
+        self.consulta = Consulta()
+
         root.title("undefined")
-        #setting window size
         width=500
         height=500
         screenwidth = root.winfo_screenwidth()
@@ -30,15 +41,15 @@ class Cadastro:
         GLabel_395["text"] = "Nome"
         GLabel_395.place(x=50,y=70,width=70,height=25)
 
-        GLineEdit_50=tk.Entry(root)
-        GLineEdit_50["bg"] = "#ffffff"
-        GLineEdit_50["borderwidth"] = "1px"
+        self.textNome=tk.Entry(root)
+        self.textNome["bg"] = "#ffffff"
+        self.textNome["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_50["font"] = ft
-        GLineEdit_50["fg"] = "#333333"
-        GLineEdit_50["justify"] = "center"
-        GLineEdit_50["text"] = ""
-        GLineEdit_50.place(x=50,y=90,width=200,height=30)
+        self.textNome["font"] = ft
+        self.textNome["fg"] = "#333333"
+        self.textNome["justify"] = "left"
+        self.textNome["text"] = ""
+        self.textNome.place(x=50,y=90,width=200,height=30)
 
         GLabel_76=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -48,15 +59,15 @@ class Cadastro:
         GLabel_76["text"] = "Sobrenome"
         GLabel_76.place(x=50,y=120,width=70,height=25)
 
-        GLineEdit_795=tk.Entry(root)
-        GLineEdit_795["bg"] = "#ffffff"
-        GLineEdit_795["borderwidth"] = "1px"
+        self.textSobrenome=tk.Entry(root)
+        self.textSobrenome["bg"] = "#ffffff"
+        self.textSobrenome["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_795["font"] = ft
-        GLineEdit_795["fg"] = "#333333"
-        GLineEdit_795["justify"] = "center"
-        GLineEdit_795["text"] = ""
-        GLineEdit_795.place(x=50,y=140,width=200,height=30)
+        self.textSobrenome["font"] = ft
+        self.textSobrenome["fg"] = "#333333"
+        self.textSobrenome["justify"] = "left"
+        self.textSobrenome["text"] = ""
+        self.textSobrenome.place(x=50,y=140,width=200,height=30)
 
         GLabel_506=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -66,16 +77,15 @@ class Cadastro:
         GLabel_506["text"] = "Usuario"
         GLabel_506.place(x=260,y=70,width=70,height=25)
 
-        GLineEdit_946=tk.Entry(root)
-        GLineEdit_946["bg"] = "#ffffff"
-        GLineEdit_946["borderwidth"] = "1px"
+        self.textUsuario=tk.Entry(root)
+        self.textUsuario["bg"] = "#ffffff"
+        self.textUsuario["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_946["font"] = ft
-        GLineEdit_946["fg"] = "#333333"
-        GLineEdit_946["justify"] = "center"
-        GLineEdit_946["text"] = ""
-        GLineEdit_946.place(x=260,y=90,width=200,height=30)
-        GLineEdit_946["show"] = "Usuario"
+        self.textUsuario["font"] = ft
+        self.textUsuario["fg"] = "#333333"
+        self.textUsuario["justify"] = "left"
+        self.textUsuario["text"] = ""
+        self.textUsuario.place(x=260,y=90,width=200,height=30)
 
         GLabel_442=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -85,15 +95,15 @@ class Cadastro:
         GLabel_442["text"] = "Senha"
         GLabel_442.place(x=260,y=120,width=70,height=25)
 
-        GLineEdit_729=tk.Entry(root)
-        GLineEdit_729["bg"] = "#ffffff"
-        GLineEdit_729["borderwidth"] = "1px"
+        self.textSenha=tk.Entry(root)
+        self.textSenha["bg"] = "#ffffff"
+        self.textSenha["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_729["font"] = ft
-        GLineEdit_729["fg"] = "#333333"
-        GLineEdit_729["justify"] = "center"
-        GLineEdit_729["text"] = ""
-        GLineEdit_729.place(x=260,y=140,width=200,height=30)
+        self.textSenha["font"] = ft
+        self.textSenha["fg"] = "#333333"
+        self.textSenha["justify"] = "left"
+        self.textSenha["text"] = ""
+        self.textSenha.place(x=260,y=140,width=200,height=30)
 
         GLabel_858=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -103,15 +113,15 @@ class Cadastro:
         GLabel_858["text"] = "Nascimento"
         GLabel_858.place(x=50,y=180,width=70,height=25)
 
-        GLineEdit_305=tk.Entry(root)
-        GLineEdit_305["bg"] = "#ffffff"
-        GLineEdit_305["borderwidth"] = "1px"
+        self.textNascimento=tk.Entry(root)
+        self.textNascimento["bg"] = "#ffffff"
+        self.textNascimento["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_305["font"] = ft
-        GLineEdit_305["fg"] = "#333333"
-        GLineEdit_305["justify"] = "center"
-        GLineEdit_305["text"] = ""
-        GLineEdit_305.place(x=50,y=200,width=100,height=25)
+        self.textNascimento["font"] = ft
+        self.textNascimento["fg"] = "#333333"
+        self.textNascimento["justify"] = "left"
+        self.textNascimento["text"] = ""
+        self.textNascimento.place(x=50,y=200,width=100,height=25)
 
         GLabel_497=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -121,15 +131,15 @@ class Cadastro:
         GLabel_497["text"] = "Peso"
         GLabel_497.place(x=50,y=230,width=70,height=25)
 
-        GLineEdit_849=tk.Entry(root)
-        GLineEdit_849["bg"] = "#ffffff"
-        GLineEdit_849["borderwidth"] = "1px"
+        self.textPeso=tk.Entry(root)
+        self.textPeso["bg"] = "#ffffff"
+        self.textPeso["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_849["font"] = ft
-        GLineEdit_849["fg"] = "#333333"
-        GLineEdit_849["justify"] = "center"
-        GLineEdit_849["text"] = ""
-        GLineEdit_849.place(x=50,y=250,width=100,height=25)
+        self.textPeso["font"] = ft
+        self.textPeso["fg"] = "#333333"
+        self.textPeso["justify"] = "left"
+        self.textPeso["text"] = ""
+        self.textPeso.place(x=50,y=250,width=100,height=25)
 
         GLabel_265=tk.Label(root)
         ft = tkFont.Font(family='Times',size=10)
@@ -139,42 +149,68 @@ class Cadastro:
         GLabel_265["text"] = "Altura"
         GLabel_265.place(x=50,y=290,width=70,height=25)
 
-        GLineEdit_409=tk.Entry(root)
-        GLineEdit_409["bg"] = "#ffffff"
-        GLineEdit_409["borderwidth"] = "1px"
+        self.textAltura=tk.Entry(root)
+        self.textAltura["bg"] = "#ffffff"
+        self.textAltura["borderwidth"] = "1px"
         ft = tkFont.Font(family='Times',size=10)
-        GLineEdit_409["font"] = ft
-        GLineEdit_409["fg"] = "#333333"
-        GLineEdit_409["justify"] = "center"
-        GLineEdit_409["text"] = ""
-        GLineEdit_409.place(x=50,y=310,width=99,height=25)
+        self.textAltura["font"] = ft
+        self.textAltura["fg"] = "#333333"
+        self.textAltura["justify"] = "left"
+        self.textAltura["text"] = ""
+        self.textAltura.place(x=50,y=310,width=99,height=25)
 
-        GButton_849=tk.Button(root)
-        GButton_849["bg"] = "#f0f0f0"
+        self.btnFinalizar=tk.Button(root)
+        self.btnFinalizar["bg"] = "#f0f0f0"
         ft = tkFont.Font(family='Times',size=10)
-        GButton_849["font"] = ft
-        GButton_849["fg"] = "#000000"
-        GButton_849["justify"] = "center"
-        GButton_849["text"] = "Finalizar"
-        GButton_849.place(x=210,y=380,width=70,height=25)
-        GButton_849["command"] = self.GButton_849_command
+        self.btnFinalizar["font"] = ft
+        self.btnFinalizar["fg"] = "#000000"
+        self.btnFinalizar["justify"] = "center"
+        self.btnFinalizar["text"] = "Finalizar"
+        self.btnFinalizar.place(x=210,y=380,width=70,height=25)
+        self.btnFinalizar["command"] = self.finalizarCadastro
 
-        GButton_977=tk.Button(root)
-        GButton_977["bg"] = "#f0f0f0"
+        self.btnCancelar=tk.Button(root)
+        self.btnCancelar["bg"] = "#f0f0f0"
         ft = tkFont.Font(family='Times',size=10)
-        GButton_977["font"] = ft
-        GButton_977["fg"] = "#000000"
-        GButton_977["justify"] = "center"
-        GButton_977["text"] = "Cancelar"
-        GButton_977.place(x=210,y=420,width=70,height=25)
-        GButton_977["command"] = self.GButton_977_command
+        self.btnCancelar["font"] = ft
+        self.btnCancelar["fg"] = "#000000"
+        self.btnCancelar["justify"] = "center"
+        self.btnCancelar["text"] = "Cancelar"
+        self.btnCancelar.place(x=210,y=420,width=70,height=25)
+        self.btnCancelar["command"] = self.voltarLogin
 
-    def GButton_849_command(self):
-        print("command")
+    def finalizarCadastro(self):
+        nome = self.textNome.get()
+        sobrenome = self.textSobrenome.get()
+        usuario = self.textUsuario.get()
+        senha = self.textSenha.get()
+        nascimento = self.textNascimento.get()
+        peso = self.textPeso.get()
+        altura = self.textAltura.get()
 
+        if not (peso.replace('.', '', 1).isdigit() and altura.replace('.', '', 1).isdigit()):
+            messagebox.showerror("Erro!", "Peso e Altura devem ser números.")
+            return
+        if not (len(nascimento) == 10 and
+                nascimento[2] == '/' and
+                nascimento[5] == '/' and
+                nascimento[:2].isdigit() and nascimento[3:5].isdigit() and
+                nascimento[6:].isdigit()):
+            messagebox.showerror("Erro!", "Formato de data inválido. Use DD/MM/AAAA.")
+            return
 
-    def GButton_977_command(self):
-        print("command")
+        if self.consulta.cadastrar_usuario(nome, sobrenome, usuario, senha, nascimento, peso, altura):
+            messagebox.showinfo("Sucesso!", "Usuário cadastrado com sucesso!")
+            self.voltarLogin()
+        else:
+            messagebox.showerror("Erro!", "Erro ao cadastrar usuário!")
+
+    def voltarLogin(self):
+        resposta = messagebox.askokcancel("Confirmação", "Deseja voltar para Login?")
+        if resposta:
+            ##colocar para abrir a tela de login
+            self.root.destroy()
+
 
 if __name__ == "__main__":
     root = tk.Tk()
