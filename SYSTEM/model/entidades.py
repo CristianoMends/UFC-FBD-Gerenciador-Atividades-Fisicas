@@ -2,12 +2,17 @@ from datetime import datetime
 
 
 class Usuario:
-    def __init__(self, nome, sobrenome, data_nascimento, peso, altura):
+    def __init__(self,id:int, nome:str, sobrenome:str, data_nascimento, peso:float, altura:float):
+        self.id = id
         self.nome = nome
         self.sobrenome = sobrenome
         self.data_nascimento = datetime.strptime(data_nascimento, "%Y-%m-%d").date()
         self.peso = peso
         self.altura = altura
+
+    def toString(self):
+        return f"Nome: {self.nome}, Sobrenome: {self.sobrenome}, Nasc: {self.data_nascimento}, Peso: {str(self.peso)}, Alt: {self.altura}"
+
 
 
 class Login:

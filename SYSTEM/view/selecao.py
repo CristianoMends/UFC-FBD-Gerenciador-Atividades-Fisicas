@@ -1,12 +1,16 @@
 import tkinter as tk
 import tkinter.font as tkFont
 from view.perfil import Perfil
+from view.Treino import Treino
+from view.comunidade import comunidade
 
 
 class Selecao:
     def __init__(self):
         self.usuarioAtual = None
         self.perfil = Perfil()
+        self.Treino = Treino()
+        self.comunidade = comunidade()
 
         root = tk.Tk()
         self.root = root
@@ -84,16 +88,18 @@ class Selecao:
         btnComunidade["command"] = self.showComunidade
 
     def showTreino(self):
-        print("command")
+        self.root.withdraw()
+        self.Treino.show(self.usuarioAtual,self)
 
 
     def showPerfil(self):
         self.root.withdraw()
-        self.perfil.show(self.usuarioAtual)
+        self.perfil.show(self.usuarioAtual, self)
 
 
     def showComunidade(self):
-        print("command")
+        self.root.withdraw()
+        self.comunidade.show(self.usuarioAtual, self)
 
     def show(self, usuarioAtual):
         self.usuarioAtual = usuarioAtual
