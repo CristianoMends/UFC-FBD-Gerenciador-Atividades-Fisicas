@@ -68,10 +68,14 @@ class Treino:
 
         self.ptMuscular_var = tk.StringVar()
         ptMuscular = [
-            "Quadríceps","Isquiotibiais","Panturrilhas","Bíceps","Tríceps","Antebraço",
-            "Latíssimo do dorso","Trapézio","Dorsais","Peitoral maior","Peitoral menor","Reto abdominal",
-            "Oblíquos","Deltoides","Trapezius", "Outro"
+            "Quadríceps", "Isquiotibiais", "Panturrilhas", "Bíceps", "Tríceps", "Antebraço",
+            "Latíssimo do dorso", "Trapézio", "Dorsais", "Peitoral maior", "Peitoral menor", "Reto abdominal",
+            "Oblíquos", "Deltoides", "Trapezius", "Outro",
+            "Glúteos", "Adutores", "Abdutores", "Flexores do quadril",
+            "Extensores do quadril", "Abdutores do quadril", "Rotadores do quadril", "Flexores do joelho",
+            "Extensões do joelho", "Tornozelo", "Antebraço","Membro Total"
         ]
+
         pt = sorted(ptMuscular)
         self.combobox_ptMuscular = ttk.Combobox(self.root, textvariable=self.ptMuscular_var, values=pt,state='readonly')
         self.combobox_ptMuscular.place(x=110,y=210,width=250,height=25)
@@ -88,11 +92,11 @@ class Treino:
             "Máquina de remo", "Máquina de musculação", "Banco inclinado",
             "Banco declinado", "Banco reto", "Smith machine", "Barra fixa",
             "Leg press", "Crossover", "Pulley", "Hack squat", "Máquina de abdominais",
-            "Máquina de flexão de pernas", "Máquina de extensão de pernas",
-            "Máquina de adução e abdução de quadril", "Plataforma vibratória",
+            "Flexão de pernas", "Extensão de pernas",
+            "Adução e abdução de quadril", "Plataforma vibratória",
             "Kettlebells", "Medicine balls", "Bosu ball", "TRX (suspension training)",
             "Escada de agilidade", "Escada de coordenação", "Steps", "Halteres",
-            "Barra olímpica", "Colchonetes de yoga e pilates", "Outro"
+            "Barra olímpica","Barra Hexagonal", "Colchonetes de yoga e pilates", "Outro"
         ]
         equipamento = sorted(equipamentos)
         self.combobox_equipamento = ttk.Combobox(self.root, textvariable=self.equipamento_var, values=equipamento,state='readonly')
